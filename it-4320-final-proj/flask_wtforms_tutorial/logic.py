@@ -11,7 +11,6 @@ def getReservations():
     return takenSeats
 
 def addReservation(seat, row, fname):
-    print("BITCH!")
 
     line = fname + "," + row + "," + seat + "\n"
     print(line)
