@@ -2,6 +2,7 @@ from flask import current_app as app
 from flask import redirect, render_template, url_for, request, flash
 
 from .forms import *
+from .logic import *
 
 
 #@app.route("/", methods=['GET', 'POST'])
@@ -28,8 +29,9 @@ def admin():
 
 @app.route("/reservations", methods=['GET', 'POST'])
 def reservations():
-
     form = ReservationForm()
+    if len(request.form) > 0:
+        addReservation(request.form['seat'], request.form['row'], request.form['first_name'])
 
     return render_template("reservations.html", form=form, template="form-template")
 
