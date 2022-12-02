@@ -12,7 +12,7 @@ def create_app():
     @app.context_processor
     def getReservations():
         seatingChart = (["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],
-        ["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"])
+        ["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"])
         takenSeats = []
         f = open("reservations.txt", "r")
         for line in f:
