@@ -9,6 +9,9 @@
 
 <div class="formwrapper">
   <h2 class="title">Reserve Your Seat</h2>
+  {% if err %}
+  <p style="color: red;">{{ err }}</p>
+{% endif %}
   <div id="seating-chart">
     Seating chart
     {% for seat in seats %}

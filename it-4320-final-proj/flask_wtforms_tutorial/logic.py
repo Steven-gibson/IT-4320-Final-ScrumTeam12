@@ -11,12 +11,49 @@ def getReservations():
     return takenSeats
 
 def addReservation(seat, row, fname):
-
-    line = fname + "," + row + "," + seat + "\n"
+    eTicket = getTicket(fname)
+    line = fname + "," + row + "," + seat + "," + eTicket + "\n"
     print(line)
     f = open("reservations.txt", "a")
     f.write(line)
     f.close()
+
+def getTicket(name):
+    fname = name
+    base = "INFOTC4320"
+    eTicket = ""
+    if(len(fname) < len(base)):
+        for x in range(len(fname)):
+            eTicket += fname[x] + base[x]
+        y = len(fname)
+        for x in range(len(base)-len(fname)):
+            eTicket += base[y]
+            y += 1
+    elif(len(fname) > len(base)):
+        for x in range(len(base)):
+            eTicket += fname[x] + base[x]
+        y = len(base)
+        for x in range(len(fname)-len(base)):
+            eTicket += fname[y]
+            y += 1
+    else: #for lengths being equal
+        for x in range(len(fname)):
+            eTicket += fname[x] + base[x]
+    
+    return eTicket
+
+def checkForm(seat, row):
+    f = open("reservations.txt", "r")
+    lines = f.readlines()
+    takenSeats = []
+    string = row + ',' + seat
+    for line in lines:
+        takenSeats.append(line.split(',')[1] +','+line.split(',')[2])
+    if string in takenSeats:
+            return False
+    print(takenSeats)
+    return True
+
 
 # func_dict = {
 #     "getReservations": getReservations,

@@ -5,6 +5,12 @@ Mary, 3, 0, MIaNrFyOTC1040
 Tim, 4, 3, TIiNmFOTC1040
 Janae, 5, 1, JIaNnFaOeTC1040
 Cyd, 8, 2, CIyNdFOTC1040
-Frank, 9, 3, FIrNaFnOkTC1040jemru,1,1
-jemru,1,1
-jemru,1,2
+Frank, 9, 3, FIrNaFnOkTC1040fksjdfla,1,4,fIkNsFjOdTfCl4a320
+fksjdfla,1,4,fIkNsFjOdTfCl4a320
+fksjdfla,1,4,fIkNsFjOdTfCl4a320
+fksjdfla,1,4,fIkNsFjOdTfCl4a320
+bayonetta,1,3,bIaNyFoOnTeCt4t3a20
+jeanne,1,3,jIeNaFnOnTeC4320
+john,1,1,jIoNhFnOTC4320
+anna,1,2,aInNnFaOTC4320
+anna,3,2,aInNnFaOTC4320
