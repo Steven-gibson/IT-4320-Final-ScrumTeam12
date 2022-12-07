@@ -2,7 +2,7 @@ from flask import current_app as app
 from flask import redirect, render_template, url_for, request, flash
 
 from .forms import *
-
+from .logic import *
 
 #@app.route("/", methods=['GET', 'POST'])
 @app.route("/", methods=['GET', 'POST'])

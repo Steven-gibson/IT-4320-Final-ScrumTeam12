@@ -2,13 +2,21 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
+
 <div class="formwrapper">
   <h2 class="title">Reserve Your Seat</h2>
-  
-  <form method="POST" action="/admin">
+  <div id="seating-chart">
+    <p>{{total}}</p>
+    Seating chart
+    {% for seat in seats %}
+    <p>{{seat[0]}} - {{seat[1]}} - {{seat[2]}} - {{seat[3]}} </p>
+        {% endfor %}
+  </div>
+  <form method="POST" action="/reservations">
       {{ form.csrf_token }}
       <div class="form-field">{{ form.first_name.label }} {{ form.first_name }}
         {% if form.first_name.errors %}
