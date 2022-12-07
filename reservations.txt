@@ -1,0 +1,30 @@
+Alice, 0, 2, AIlNiFcOeTC1040
+Bob, 0, 1, BIoNbFOTC040
+John, 2, 2, JIoNhFnOTC1040
+Mary, 3, 0, MIaNrFyOTC1040
+Tim, 4, 3, TIiNmFOTC1040
+Janae, 5, 1, JIaNnFaOeTC1040
+Cyd, 8, 2, CIyNdFOTC1040
+Frank, 9, 3, FIrNaFnOkTC1040bayo,0,3,bIaNyFoOTC4320
+bayo,0,0,bIaNyFoOTC4320
+bayo,0,0,bIaNyFoOTC4320
+bayo,0,2,bIaNyFoOTC4320
+bayo,0,3,bIaNyFoOTC4320
+bayo,0,3,bIaNyFoOTC4320
+bayo,0,3,bIaNyFoOTC4320
+bayo,1,0,bIaNyFoOTC4320
+bayo,1,1,bIaNyFoOTC4320
+bayo,1,2,bIaNyFoOTC4320
+bayo,11,0,bIaNyFoOTC4320
+bayo,11,3,bIaNyFoOTC4320
+bayo,1,3,bIaNyFoOTC4320
+bayo,10,3,bIaNyFoOTC4320
+bayo,10,2,bIaNyFoOTC4320
+bayo,2,1,bIaNyFoOTC4320
+bayo,3,2,bIaNyFoOTC4320
+fjna,2,0,fIjNnFaOTC4320
+fjna,2,2,fIjNnFaOTC4320
+fjna,2,3,fIjNnFaOTC4320
+fjna,3,0,fIjNnFaOTC4320
+fjna,3,1,fIjNnFaOTC4320
+fjna,3,3,fIjNnFaOTC4320
