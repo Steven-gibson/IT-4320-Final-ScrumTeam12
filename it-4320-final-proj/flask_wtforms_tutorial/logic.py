@@ -4,7 +4,7 @@ def getReservations():
     takenSeats = []
     f = open("reservations.txt", "r")
     for line in f:
-        seat = [line.split(",")[1], line.split(",")[2]]
+        seat = [str(int(line.split(",")[1])-1), str(int(line.split(",")[2])-1)]
         takenSeats.append(seat)
     f.close()
     print(takenSeats)
@@ -12,7 +12,7 @@ def getReservations():
 
 def addReservation(seat, row, fname):
     eTicket = getTicket(fname)
-    line = fname + "," + row + "," + seat + "," + eTicket + "\n"
+    line = fname + "," + str(int(row)-1) + "," + str(int(seat)-1) + "," + eTicket + "\n"
     print(line)
     f = open("reservations.txt", "a")
     f.write(line)
@@ -46,7 +46,7 @@ def checkForm(seat, row):
     f = open("reservations.txt", "r")
     lines = f.readlines()
     takenSeats = []
-    string = row + ',' + seat
+    string = str(int(row)-1) + ',' + str(int(seat)-1)
     for line in lines:
         takenSeats.append(line.split(',')[1] +','+line.split(',')[2])
     if string in takenSeats:
