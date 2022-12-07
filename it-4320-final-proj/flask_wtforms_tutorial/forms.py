@@ -4,11 +4,13 @@ from wtforms import (
     SelectField,
     StringField,
     SubmitField,
+    TextField,
 )
 #from datetime import date
 #from wtforms.fields.html5 import DateField
 from wtforms.validators import DataRequired
-
+from wtforms.widgets import ListWidget
+from .logic import *
 class UserOptionForm(FlaskForm):
     """Generate Your Graph."""
     
