@@ -30,6 +30,7 @@ def admin():
 @app.route("/reservations", methods=['GET', 'POST'])
 def reservations():
     form = ReservationForm()
+    err = None
     if len(request.form) > 0:
         if(checkForm(request.form['seat'], request.form['row'])):
             addReservation(request.form['seat'], request.form['row'], request.form['first_name'])
