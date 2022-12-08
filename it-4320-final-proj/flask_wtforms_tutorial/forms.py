@@ -11,7 +11,6 @@ from wtforms import (
 from wtforms.validators import DataRequired
 from wtforms.widgets import ListWidget
 from .logic import *
-
 class UserOptionForm(FlaskForm):
     """Generate Your Graph."""
     
