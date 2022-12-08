@@ -9,11 +9,10 @@ def create_app():
     app.config["RECAPTCHA_PUBLIC_KEY"] = "iubhiukfgjbkhfvgkdfm"
     app.config["RECAPTCHA_PARAMETERS"] = {"size": "100%"}
 
-    
     @app.context_processor
     def getReservations():
         seatingChart = (["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],
-        ["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"])
+        ["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"],["O","O","O","O"])
         takenSeats = []
         f = open("reservations.txt", "r")
         for line in f:
@@ -21,12 +20,16 @@ def create_app():
             takenSeats.append(seat)
         f.close()
         for seat in takenSeats:
-            row = seat[0] - 1
-            s = seat[1] - 1
+            row = seat[0]
+            s = seat[1]
+            print("row: " + str(row))
+            print("s: " + str(s))
             seatingChart[row][s] = "X"
 
        #print(takenSeats)
         return dict(seats=seatingChart)
+
+    app.jinja_env.globals.update(getReservations=getReservations)
 
     def get_cost_matrix():
             cost_matrix = [[100, 75, 50, 100] for row in range(12)]
@@ -50,11 +53,27 @@ def create_app():
         counter = counter / 12
         return dict(total=counter)
 
-    app.jinja_env.globals.update(getReservations=getReservations)
     app.jinja_env.globals.update(total_cost=total_cost)
+
+
+    # @app.context_processor
+    # def utility_processor():
+    #     def addReservation():
+    #         print("BITCH!")
+    #     return dict(addReservation=addReservation)
+    
+    # app.jinja_env.globals.update(addReservation=addReservation)
+
+            # line = fname + "," + row + "," + seat
+
+            # f = open("reservations.txt", "a")
+            # f.write(line)
+            # f.close()
 
     with app.app_context():
         # Import parts of our flask_wtforms_tutorial
         from . import routes
 
         return app
+
+

@@ -28,8 +28,14 @@ def admin():
 
 @app.route("/reservations", methods=['GET', 'POST'])
 def reservations():
-
     form = ReservationForm()
+    err = None
+    if len(request.form) > 0:
+        if(checkForm(request.form['seat'], request.form['row'])):
+            addReservation(request.form['seat'], request.form['row'], request.form['first_name'])
+            err = None
+        else:
+            err = "That seat is taken."
 
-    return render_template("reservations.html", form=form, template="form-template")
+    return render_template("reservations.html", form=form, template="form-template", err=err)
 

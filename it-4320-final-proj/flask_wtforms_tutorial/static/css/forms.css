@@ -142,3 +142,7 @@ i {
 .g-recaptcha div {
   margin: auto;
 }
+
+#seating-chart {
+  background-color: gray;
+}

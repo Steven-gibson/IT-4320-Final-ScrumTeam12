@@ -20,3 +20,7 @@ a {
 li {
   text-align: center;
 }
+
+#seating-chart {
+  background-color: gray;
+}
