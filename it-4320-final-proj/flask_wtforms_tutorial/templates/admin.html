@@ -9,8 +9,12 @@
   <h2 class="title">Administrator Login</h2>
   
   <form method="POST" action="/admin">
+    {% if err %}
+    <p>{{err}}</p>
+    {% endif %}
       {{ form.csrf_token }}
       <div class="form-field">{{ form.username.label }} {{ form.username }}
+
         {% if form.username.errors %}
           <ul class="errors">
             {% for error in form.username.errors %}
