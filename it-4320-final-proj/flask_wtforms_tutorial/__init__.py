@@ -34,6 +34,7 @@ def create_app():
     def get_cost_matrix():
             cost_matrix = [[100, 75, 50, 100] for row in range(12)]
             return cost_matrix
+
     @app.context_processor
     def total_cost():
         seat_numbers =[]
@@ -55,6 +56,22 @@ def create_app():
 
     app.jinja_env.globals.update(total_cost=total_cost)
 
+
+
+
+    # @app.context_processor
+    # def authenticate(uname, pword):
+        
+    #     auth = open("passcodes.txt", "r")
+    #     for user in auth:
+    #         user, passw = user.split(',')[0], user.split(',')[1]
+    #         if user == uname and passw == pword:
+    #             allow = True
+    #         else:
+    #             allow = False
+    #         return dict(allow=allow)
+
+    # app.jinja_env.globals.update(authenticate=authenticate)
 
     # @app.context_processor
     # def utility_processor():

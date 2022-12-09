@@ -12,6 +12,9 @@
   {% if err %}
   <p style="color: red;">{{ err }}</p>
 {% endif %}
+{% if loggedIn %}
+<p>{{total}}</p>
+{% endif %}
   <div id="seating-chart">
     Seating chart
     {% for seat in seats %}

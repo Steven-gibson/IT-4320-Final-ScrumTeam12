@@ -1,4 +1,6 @@
-#from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
+from flask import current_app as app
+
 
 def getReservations():
     takenSeats = []
@@ -53,6 +55,26 @@ def checkForm(seat, row):
             return False
     print(takenSeats)
     return True
+
+def authenticate(uname, pword):
+    auth = open("passcodes.txt", "r")
+    for user in auth:
+        user, passw = user.split(',')[0], user.split(',')[1]
+        user, passw = user.strip(), passw.strip()
+        print(user)
+        print(passw)
+        if user == uname and passw == pword:
+            return True
+        else:
+            continue
+        return False
+
+# @app.context_processor
+# def toggleLoggedIn(toggle=False):
+#     return dict(loggedIn=toggle)
+# app.jinja_env.globals.update(loggedIn=toggleLoggedIn)
+
+    
 
 
 # func_dict = {
