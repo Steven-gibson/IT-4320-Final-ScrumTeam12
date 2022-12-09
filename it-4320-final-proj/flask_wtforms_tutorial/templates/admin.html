@@ -5,9 +5,53 @@
 {% endblock %}
 
 {% block content %}
-<div class="formwrapper">
-  <h2 class="title">Administrator Login</h2>
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
   
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    text-align: center;
+    float: right;
+  }
+  
+  a {
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    color: gray;
+  }
+</style>
+<div class="formwrapper">
+    <ul>
+      <li><a href="/">Home </a></li>
+      <li><a href="/reservations">Reservations </a> </li>
+      <li><a href="/admin"> Admin</a></li>
+    </ul>
+  <h2 class="title">Administrator Login</h2>
+
+  {% if loggedIn %}
+  <div id="seating-chart">
+    <p>Total cost: {{total}}</p>
+    Seating chart
+    {% for seat in seats %}
+    <p>{{seat[0]}} - {{seat[1]}} - {{seat[2]}} - {{seat[3]}} </p>
+        {% endfor %}
+  </div>
+  {% endif %}
   <form method="POST" action="/admin">
     {% if err %}
     <p>{{err}}</p>

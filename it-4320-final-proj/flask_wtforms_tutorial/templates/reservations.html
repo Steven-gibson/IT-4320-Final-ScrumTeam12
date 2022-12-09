@@ -6,14 +6,45 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    text-align: center;
+    float: right;
+  }
+  
+  a {
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    color: gray;
+  }
+</style>
 
 <div class="formwrapper">
+  <ul>
+    <li><a href="/">Home </a></li>
+    <li><a href="/reservations">Reservations </a> </li>
+    <li><a href="/admin"> Admin</a></li>
+  </ul>
   <h2 class="title">Reserve Your Seat</h2>
   {% if err %}
   <p style="color: red;">{{ err }}</p>
-{% endif %}
-{% if loggedIn %}
-<p>{{total}}</p>
 {% endif %}
   <div id="seating-chart">
     Seating chart

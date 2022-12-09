@@ -32,8 +32,7 @@ def admin():
         loggedIn = authenticate(request.form['username'], request.form['password'])
         
         if loggedIn:
-            toggleLoggedIn(True)
-            return redirect('/reservations')
+            return render_template("admin.html", form=form, template="form-template", err=err, loggedIn=loggedIn)
         else:
             err = "That is the wrong username/password combination."
 

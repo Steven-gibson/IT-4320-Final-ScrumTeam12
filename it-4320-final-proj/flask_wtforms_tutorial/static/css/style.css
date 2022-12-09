@@ -8,18 +8,6 @@ h1 {
   color: #363a40;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  text-align: center;
-}
 
 #seating-chart {
   background-color: gray;
